@@ -1,0 +1,11 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: elasticsearchlb
+  annotations:
+    io.rancher.scheduler.global: "true"
+    http.port: "9200"
+spec:
+  backend:
+    serviceName: elasticsearch
+    servicePort: 9200
