@@ -69,6 +69,6 @@ spec:
         - name: storage
           mountPath: /data
       volumes:
-          - emptyDir:
-              medium: ""
+          - hostPath:
+              path: /home/elastic/es-client
             name: "storage"
