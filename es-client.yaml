@@ -28,7 +28,7 @@ spec:
             add:
               - IPC_LOCK
               - SYS_RESOURCE
-        image: wzrdtales/docker-elasticsearch-kubernetes:5.6.3
+        image: dusansusic/docker-elasticsearch-kubernetes:5.6.3
         imagePullPolicy: Always
         env:
         - name: NAMESPACE
@@ -49,6 +49,8 @@ spec:
           value: "true"
         - name: "ES_JAVA_OPTS"
           value: "-Xms256m -Xmx256m"
+        - name: "REINDEX_REMOTE_WHITELIST_NET"
+          value: "172.16.*:*"
         ports:
         - containerPort: 9200
           name: http
